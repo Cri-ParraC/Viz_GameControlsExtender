@@ -1,14 +1,14 @@
 //=============================================================================
-// Viz_GameControlsExtender.js [MZ] (v1.0.0)
+// Viz_GameControlsExtender.js [MZ] (v1.0.1)
 //=============================================================================
 
 /*:
  * @target MZ
- * @plugindesc [MZ] (v1.0.0) Extiende la cantidad de inputs posibles del mando y teclado.
+ * @plugindesc [MZ] (v1.0.1) Extiende la cantidad de inputs posibles del mando y teclado.
  * @author Vizcacha
- * @version 1.0.0
+ * @version 1.0.1
  * @url https://github.com/Cri-ParraC/Viz_GameControlsExtender
- * @help Viz_GameControlsExtender.js [MZ] (v1.0.0)
+ * @help Viz_GameControlsExtender.js [MZ] (v1.0.1)
  * ----------------------------------------------------------------------------
  * Plugin para RPG Maker MZ que extiende la cantidad de inputs posibles del
  * mando y teclado.
@@ -31,11 +31,11 @@
  * @off No
  * @default false
  * @parent joystick
- * */
+ */
 
 (() => {
   "use strict";
-  console.info("Viz_GameControlsExtender.js [MZ] (v1.0.0) activado");
+  console.info("Viz_GameControlsExtender.js [MZ] (v1.0.1) activado");
 
   const parameters = PluginManager.parameters('Viz_GameControlsExtender');
   const switchAB = parameters.switchAB;
@@ -68,7 +68,6 @@
     104: "up",      // numpad 8
     120: "debug"    // F9
   };
-
 
   myInput.gamepadMapper = {
     0: "ok",       // A
@@ -142,12 +141,12 @@
     }
     if (axes[3] < -threshold) {
       newState[200] = true; // RSY ↑
-    } else if (axes[2] > threshold) {
+    } else if (axes[3] > threshold) {
       newState[201] = true; // RSY ↓
     }
     if (axes[2] < -threshold) {
       newState[202] = true; // RSX ←
-    } else if (axes[5] > threshold) {
+    } else if (axes[2] > threshold) {
       newState[203] = true; // RSX →
     }
     for (let j = 0; j < newState.length; j++) {
