@@ -1,4 +1,4 @@
-# Viz_GameControlsExtender.js [MZ] (v1.0.1)
+# Viz_GameControlsExtender.js [MZ] (v1.0.2)
 
 Plugin para RPG Maker MZ que extiende la cantidad de inputs posibles del mando y teclado.
 
