@@ -1,14 +1,13 @@
 //=============================================================================
-// Viz_GameControlsExtender.js [MZ] (v1.0.1)
+// Viz_GameControlsExtender.js [MZ] (v1.0.2)
 //=============================================================================
 
 /*:
  * @target MZ
- * @plugindesc [MZ] (v1.0.1) Extiende la cantidad de inputs posibles del mando y teclado.
+ * @plugindesc [MZ] (v1.0.2) Extiende la cantidad de inputs posibles del mando y teclado.
  * @author Vizcacha
- * @version 1.0.1
  * @url https://github.com/Cri-ParraC/Viz_GameControlsExtender
- * @help Viz_GameControlsExtender.js [MZ] (v1.0.1)
+ * @help Viz_GameControlsExtender.js [MZ] (v1.0.2)
  * ----------------------------------------------------------------------------
  * Plugin para RPG Maker MZ que extiende la cantidad de inputs posibles del
  * mando y teclado.
@@ -35,10 +34,14 @@
 
 (() => {
   "use strict";
-  console.info("Viz_GameControlsExtender.js [MZ] (v1.0.1) activado");
+
+  console.info("Viz_GameControlsExtender.js [MZ] (v1.0.2)");
+
+  window.Imported ||= {};
+  Imported.Viz_GameControlsExtender = 1.0;
 
   const parameters = PluginManager.parameters('Viz_GameControlsExtender');
-  const switchAB = parameters.switchAB;
+  const switchAB = parameters.switchAB === 'true';
 
   const myInput = {};
 
@@ -98,7 +101,7 @@
     203: ""        // RSX →
   };
 
-  if (switchAB === true) {
+  if (switchAB) {
     myInput.gamepadMapper[0] = "cancel";
     myInput.gamepadMapper[1] = "ok";
   }
